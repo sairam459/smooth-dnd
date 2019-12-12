@@ -256,20 +256,20 @@ export default (containers: IContainer[], maxScrollSpeed = maxSpeed) => {
 				}
 			});
 
-			const overlappingAnimators = animatorInfos.filter(p => p.cachedRect);
-			if (overlappingAnimators.length && overlappingAnimators.length > 1) {
-				// stop animations except topmost
-				const topScrollerAnimator = getTopmostScrollAnimator(overlappingAnimators, draggableInfo.mousePosition);
+			// const overlappingAnimators = animatorInfos.filter(p => p.cachedRect);
+			// if (overlappingAnimators.length && overlappingAnimators.length > 1) {
+			// 	// stop animations except topmost
+			// 	const topScrollerAnimator = getTopmostScrollAnimator(overlappingAnimators, draggableInfo.mousePosition);
 
-				if (topScrollerAnimator) {
-					overlappingAnimators.forEach(p => {
-						if (p !== topScrollerAnimator) {
-							p.axisAnimations.x && p.axisAnimations.x.animator.stop();
-							p.axisAnimations.y && p.axisAnimations.y.animator.stop();
-						}
-					})
-				}
-			}
+			// 	if (topScrollerAnimator) {
+			// 		overlappingAnimators.forEach(p => {
+			// 			if (p !== topScrollerAnimator) {
+			// 				p.axisAnimations.x && p.axisAnimations.x.animator.stop();
+			// 				p.axisAnimations.y && p.axisAnimations.y.animator.stop();
+			// 			}
+			// 		})
+			// 	}
+			// }
 		}
 	}
 }
