@@ -483,7 +483,9 @@ function onMouseUp() {
 
       let containerToCallDrop = containers.shift();
       while (containerToCallDrop !== undefined) {
-        containerToCallDrop.handleDrop(draggableInfo);
+        if(draggableInfo.targetElement === containerToCallDrop.element || draggableInfo.container.element === containerToCallDrop.element){
+          containerToCallDrop.handleDrop(draggableInfo);
+        }
         containerToCallDrop = containers.shift();
       }
 
