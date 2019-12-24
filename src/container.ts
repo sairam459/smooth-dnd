@@ -170,7 +170,9 @@ function handleDrop({ element, draggables, layout, getOptions }: ContainerProps)
           payload: draggableInfo.payload,
           // droppedElement: draggableInfo.element.firstElementChild,
         };
-        dropHandler(dropHandlerParams, getOptions().onDrop);
+        if(removedIndex !== null && addedIndex!== null){
+          dropHandler(dropHandlerParams, getOptions().onDrop);
+        }
       }
     }
   };
