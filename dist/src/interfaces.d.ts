@@ -100,6 +100,7 @@ export interface IContainer {
     getScrollMaxSpeed: () => number | undefined;
     setOptions: (options: ContainerOptions, merge?: boolean) => void;
     shouldUseTransformForGhost: () => boolean;
+    addLazyDrags: (container: IContainer) => any;
 }
 export interface GhostInfo {
     topLeft: {

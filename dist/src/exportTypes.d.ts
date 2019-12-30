@@ -1,6 +1,7 @@
 export interface SmoothDnD {
     dispose: () => void;
     setOptions: (options: ContainerOptions, merge?: boolean) => void;
+    addLazyDrags: () => any;
 }
 export declare type SmoothDnDCreator = ((element: HTMLElement, options?: ContainerOptions) => SmoothDnD) & {
     dropHandler?: any;

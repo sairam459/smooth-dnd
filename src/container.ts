@@ -727,6 +727,12 @@ function Container(element: HTMLElement): (options?: ContainerOptions) => IConta
       return containerOptions;
     }
 
+    function addLazyDrags(container: IContainer): any{
+      const element = container.element;
+      const draggables = props.draggables;
+      setDraggables(draggables, element);
+    }
+
     const container: IContainer = {
       element,
       draggables: props.draggables,
@@ -774,6 +780,7 @@ function Container(element: HTMLElement): (options?: ContainerOptions) => IConta
       },
       getOptions,
       setOptions,
+      addLazyDrags
     };
 
     return container;
@@ -793,6 +800,10 @@ const smoothDnD: SmoothDnDCreator = function (element: HTMLElement, options?: Co
     },
     setOptions(options: ContainerOptions, merge?: boolean) {
       container.setOptions(options, merge);
+    },
+
+    addLazyDrags(){
+      container.addLazyDrags(container);
     }
   };
 };
